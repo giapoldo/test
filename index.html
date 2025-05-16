@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Liquidaciones</title>
+  <meta charset="utf-8" />
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <link href="./styles.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="jquery.serializejson.js"></script>
+  <script src="app.js" defer></script>
+
+<body>
+  <dialog id="dialog-box">
+    <h2>Ingresa nombre del ítem</h2>
+    <input autofocus type="text" id="modal-input" name="modal-input" inputmode="text"/>
+    <div>
+      <button id="confirm-dialog">Aceptar</button>
+      <button id="close-dialog">Cancelar</button>
+    </div>
+  </dialog>
+  <nav id="nav-top>
+    <button id="button_login">LOG IN</button>
+    <button type="button" id="submit_user">Crear Usuario</button>
+  </nav>
+  <main>
+    <header>Liquidaciones Simples</header>
+    <form id="liquidacion" >
+      <fieldset name="general">
+        <legend>Datos generales</legend>
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" inputmode="text" placeholder="Nombre Completo"
+            value="Namey McName" />
+        </div>
+        <div>
+          <label for="rut">RUT</label>
+          <input type="text" id="rut" name="rut" inputmode="numeric" placeholder="12345678-9" value="12345678-9" />
+        </div>
+        <div>
+          <div class="label">Temporalidad</div>
+          <div id="radios_container">
+            <span>
+              <input type="radio" id="mensual" name="temporalidad" value="mensual" checked />
+              <label for="mensual">Mensual</label>
+            </span>
+            <span>
+              <input type="radio" id="diaria" name="temporalidad" value="diaria" />
+              <label for="diaria">Diaria</label>
+            </span>
+          </div>
+        </div>
+        <div>
+          <label for="dias">Cantidad de días</label>
+          <input type="text" id="dias" name="dias_trabajados" inputmode="numeric" placeholder="30" value="30" />
+        </div>
+          <button type="button" class="row_adder">+</button>
+
+      </fieldset>
+      <fieldset name="haberes_i">
+        <legend>Haberes imponibles</legend>
+        <div>
+          <label for="base_sueldo">Sueldo Base</label>
+          <input type="text" id="base_sueldo" name="base_sueldo" inputmode="numeric" placeholder="100.000"
+            value="1000000" />
+        </div>
+        <div>
+          <label for="aguinaldo">Aguinaldo</label>
+          <input type="text" id="aguinaldo" name="aguinaldo" inputmode="numeric" placeholder="100.000" value="50000" />
+        </div>
+        <button type="button" class="row_adder">+</button>
+
+      </fieldset>
+      <fieldset name="haberes_n">
+        <legend>Haberes no imponibles</legend>
+        <div>
+          <label for="colacion">Colación diaria</label>
+          <input type="text" id="colacion" name="colacion" placeholder="5.000" value="4000" />
+        </div>
+        <div>
+          <label for="movilizacion">Movilización diaria</label>
+          <input type="text" name="movilizacion" id="movilizacion" placeholder="100.000" value="3000" />
+        </div>
+      <button type="button" class="row_adder">+</button>
+
+      </fieldset>
+      <fieldset name="descuentos" class="grow rounded-md">
+        <legend>Descuentos</legend>
+        <div>
+          <label for="comision_afp">% de comisión AFP</label>
+          <input type="text" name="comision_afp" id="comision_afp" placeholder="1,5%" value="1,5" />
+        </div>
+        <div>
+          <label for="fondo_pensiones">% a Fondo de pensiones</label>
+          <input type="text" name="fondo_pensiones" id="fondo_pensiones" placeholder="10%" value="10" />
+        </div>
+        <div>
+          <label for="salud">% de Salud </label>
+          <input type="text" id="salud" name="salud" placeholder="7%" value="7" />
+        </div>
+        <div>
+          <label for="cesantia">% a Seguro de Cesantía</label>
+          <input type="text" id="cesantia" name="cesantia" placeholder="0,6%" value="0,6" />
+        </div>
+        <div>
+          <label for="impto">% Impuesto único</label>
+          <input type="text" id="impto" name="impto" placeholder="23%" value="23" />
+        </div>
+      <button type="button" class="row_adder">+</button>
+
+      </fieldset>
+      <nav id="nav-bottom">
+        <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+        <button type="submit" id="submit_form">Generar liquidación</button>
+        <button type="button" id="get_liquidacion">Buscar última liquidación</button>
+      </nav>
+    </form>
+  <main>
+  <!-- <section id="footer">
+      <header>
+        <h2>¿Preguntas o comentarios?</h2>
+      </header>
+      <form id="contacto" method="post" action="/forms/contacto">
+        <div>
+          <input type="text" name="name" placeholder="Nombre" />
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email" />
+        </div>
+        <div>
+          <textarea name="message" placeholder="Mensaje" rows="6"></textarea>
+        </div>
+        <div>
+          <button form="contacto" type="submit">Enviar mensaje</button>
+        </div>
+      </form>
+
+      <p>&copy; Liquidaciones. All rights reserved.</p>
+    </section> -->
+</body>
+
+</html>
